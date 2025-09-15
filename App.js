@@ -1,0 +1,35 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import OnboardingScreen from './screens/OnboardingScreen';
+import HumanDashboardScreen from './screens/HumanDashboardScreen';
+import PetDashboardScreen from './screens/PetDashboardScreen';
+import BiomarkerTrendsScreen from './screens/BiomarkerTrendsScreen';
+import FatalityAlertScreen from './screens/FatalityAlertScreen';
+import EmergencyScreen from './screens/EmergencyScreen';
+import HealthTimelineScreen from './screens/HealthTimelineScreen';
+import PredictiveTimelineScreen from './screens/PredictiveTimelineScreen';
+import HouseholdDashboardScreen from './screens/HouseholdDashboardScreen';
+import InsuranceScreen from './screens/InsuranceScreen';
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Onboarding">
+        <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{ title: 'Connect Device' }} />
+        <Stack.Screen name="HumanDashboard" component={HumanDashboardScreen} options={{ title: 'Human Dashboard' }} />
+        <Stack.Screen name="PetDashboard" component={PetDashboardScreen} options={{ title: 'Pet Dashboard' }} />
+        <Stack.Screen name="Trends" component={BiomarkerTrendsScreen} options={{ title: 'Biomarker Trends' }} />
+        <Stack.Screen name="Alert" component={FatalityAlertScreen} options={{ title: 'Fatality Alert' }} />
+        <Stack.Screen name="Emergency" component={EmergencyScreen} options={{ title: 'Emergency Assistance' }} />
+        <Stack.Screen name="Timeline" component={HealthTimelineScreen} options={{ title: 'Health Timeline' }} />
+        <Stack.Screen name="PredictiveTimeline" component={PredictiveTimelineScreen} options={{ title: 'Predictive Timeline' }} />
+        <Stack.Screen name="Household" component={HouseholdDashboardScreen} options={{ title: 'Household Dashboard' }} />
+        <Stack.Screen name="Insurance" component={InsuranceScreen} options={{ title: 'Insurance Integration' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
