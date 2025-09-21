@@ -1,16 +1,12 @@
 from flask import Flask, request, jsonify
-import pickle
 import numpy as np
 from utils import clean_input, is_event
+from model_handler import load_model
 
 app = Flask(__name__)
 
-# Load trained model (replace with your model path later)
-# For now, it's just a placeholder — you can update with real .pkl
-try:
-    model = pickle.load(open("models/liquid_ai_rf.pkl", "rb"))
-except:
-    model = None
+# Load trained model from model_handler
+model = load_model()
 
 @app.route("/")
 def home():
@@ -42,3 +38,4 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
