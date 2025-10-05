@@ -17,6 +17,8 @@ import AlertsScreen from './src/screens/AlertsScreen';
 
 const Stack = createNativeStackNavigator();
 
+import LoginScreen from './src/screens/LoginScreen';
+import SignupScreen from './src/screens/SignupScreen';
 export default function App() {
   return (
     <NavigationContainer>
@@ -33,6 +35,8 @@ export default function App() {
         <Stack.Screen name="Insurance" component={InsuranceScreen} options={{ title: 'Insurance Integration' }} />
           <Stack.Screen name="Predict" component={PredictScreen} options={{ title: 'Predict' }} />
         <Stack.Screen name="Alerts" component={AlertsScreen} options={{ title: 'Alerts' }} />
+        <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
+      <Stack.Screen name="Signup" component={SignupScreen} options={{ title: 'Sign Up' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
