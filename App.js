@@ -12,6 +12,8 @@ import HealthTimelineScreen from './screens/HealthTimelineScreen';
 import PredictiveTimelineScreen from './screens/PredictiveTimelineScreen';
 import HouseholdDashboardScreen from './screens/HouseholdDashboardScreen';
 import InsuranceScreen from './screens/InsuranceScreen';
+import PredictScreen from './src/screens/PredictScreen';
+import AlertsScreen from './src/screens/AlertsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +31,8 @@ export default function App() {
         <Stack.Screen name="PredictiveTimeline" component={PredictiveTimelineScreen} options={{ title: 'Predictive Timeline' }} />
         <Stack.Screen name="Household" component={HouseholdDashboardScreen} options={{ title: 'Household Dashboard' }} />
         <Stack.Screen name="Insurance" component={InsuranceScreen} options={{ title: 'Insurance Integration' }} />
+          <Stack.Screen name="Predict" component={PredictScreen} options={{ title: 'Predict' }} />
+        <Stack.Screen name="Alerts" component={AlertsScreen} options={{ title: 'Alerts' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
