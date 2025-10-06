@@ -35,6 +35,9 @@ export default function App() {
         <Stack.Screen name="Insurance" component={InsuranceScreen} options={{ title: 'Insurance Integration' }} />
           <Stack.Screen name="Predict" component={PredictScreen} options={{ title: 'Predict' }} />
         <Stack.Screen name="Alerts" component={AlertsScreen} options={{ title: 'Alerts' }} />
+        <Stack.Screen name="Analytics" component={require('./src/screens/AnalyticsScreen').default} options={{ title: 'Analytics' }} />
+        <Stack.Screen name="Notifications" component={require('./src/screens/NotificationsScreen').default} options={{ title: 'Notifications' }} />
+  
         <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
       <Stack.Screen name="Signup" component={SignupScreen} options={{ title: 'Sign Up' }} />
       </Stack.Navigator>
