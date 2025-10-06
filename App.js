@@ -37,6 +37,8 @@ export default function App() {
         <Stack.Screen name="Alerts" component={AlertsScreen} options={{ title: 'Alerts' }} />
         <Stack.Screen name="Analytics" component={require('./src/screens/AnalyticsScreen').default} options={{ title: 'Analytics' }} />
         <Stack.Screen name="Notifications" component={require('./src/screens/NotificationsScreen').default} options={{ title: 'Notifications' }} />
+          <Stack.Screen name="Sensors" component={require('./src/screens/SensorsScreen').default} options={{ title: 'Sensors' }} />
+  
   
         <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
       <Stack.Screen name="Signup" component={SignupScreen} options={{ title: 'Sign Up' }} />
