@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
+
 import { SafeAreaView, FlatList, View, Text, StyleSheet } from 'react-native';
+
+import { getAlerts, saveAlerts } from '../utils/storage';
+
 
 // Replace YOUR_BACKEND with your backend URL
 const BACKEND = 'http://YOUR_BACKEND:5000';
@@ -12,16 +16,26 @@ export default function AlertsScreen() {
       const res = await fetch(`${BACKEND}/alerts`);
       const json = await res.json();
       setAlerts(json);
+            await saveAlerts(json);
     } catch (e) {
       console.log(e);
     }
   };
 
-  useEffect(() => {
-    fetchAlerts();
-    const interval = setInterval(fetchAlerts, 5000);
-    return () => clearInterval(interval);
-  }, []);
+useEffect(() => {
+  const loadCached = async () => {
+    const cached = await getAlerts();
+    if (cached && cached.length > 0) {
+      setAlerts(cached);
+    }
+  };
+  loadCached();
+  fetchAlerts();
+  const interval = setInterval(fetchAlerts, 5000);
+  return () => clearInterval(interval);
+}, []);
+
+
 
   const getColor = (tier) => {
     return tier === 2 ? '#ff4d4f' : tier === 1 ? '#ffa81a' : '#52c41a';
@@ -39,7 +53,6 @@ export default function AlertsScreen() {
       <FlatList
         data={alerts}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={renderItem}
       />
     </SafeAreaView>
   );
