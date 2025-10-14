@@ -1,5 +1,7 @@
+
 import React, { useState } from 'react';
 import { SafeAreaView, Text, TextInput, Button, View, StyleSheet } from 'react-native';
+import { savePrediction } from '../utils/storage';
 
 // Replace YOUR_BACKEND with your backend URL
 const BACKEND = 'http://YOUR_BACKEND:5000';
@@ -30,10 +32,20 @@ export default function PredictScreen() {
       });
       const json = await res.json();
       setResult(json);
+          await savePrediction({
+      species,
+      heart_rate: parseFloat(heartRate),
+      spo2: parseFloat(spo2),
+      temperature: parseFloat(temperature),
+      resp_rate: parseFloat(respRate),
+      rr: parseFloat(rr),
+      result: json,
+      timestamp: Date.now(),
+    })
     } catch (e) {
       console.log(e);
     }
-  };
+      
 
   const getColor = () => {
     if (!result || result.tier == null) return '#52c41a'; // default green
