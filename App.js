@@ -19,6 +19,8 @@ const Stack = createNativeStackNavigator();
 
 import LoginScreen from './src/screens/LoginScreen';
 import SignupScreen from './src/screens/SignupScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -38,6 +40,8 @@ export default function App() {
         <Stack.Screen name="Analytics" component={require('./src/screens/AnalyticsScreen').default} options={{ title: 'Analytics' }} />
         <Stack.Screen name="Notifications" component={require('./src/screens/NotificationsScreen').default} options={{ title: 'Notifications' }} />
           <Stack.Screen name="Sensors" component={require('./src/screens/SensorsScreen').default} options={{ title: 'Sensors' }} />
+        <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'Profile' }} />
+     
   
   
         <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
