@@ -8,10 +8,9 @@ export default function Home() {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Liquid AI</Text>
       <Text>Your body baseline, simplified</Text>
-
-           <Button title="Connect Device" onPress={() => router.push('/connect')} />
+      <Button title="Connect Device" onPress={() => router.push('/connect')} />
       <Button title="Enter Data" onPress={() => router.push('/input')} />
-      <Button title="View Dashboard" onPress={() => router.push('/dashboard')} />/>
+      <Button title="View Dashboard" onPress={() => router.push('/dashboard')} />
     </View>
   );
 }
