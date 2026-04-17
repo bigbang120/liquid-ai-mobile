@@ -9,8 +9,9 @@ export default function Home() {
       <Text>Liquid AI</Text>
       <Text>Your body baseline, simplified</Text>
 
-      <Button title="Connect Device" onPress={() => router.push('/connect')} />
-      <Button title="View Dashboard" onPress={() => router.push('/dashboard')} />
+           <Button title="Connect Device" onPress={() => router.push('/connect')} />
+      <Button title="Enter Data" onPress={() => router.push('/input')} />
+      <Button title="View Dashboard" onPress={() => router.push('/dashboard')} />/>
     </View>
   );
 }
